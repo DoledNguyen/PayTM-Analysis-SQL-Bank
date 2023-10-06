@@ -74,7 +74,7 @@ WITH joined_table AS (
 )
 SELECT [month]
 ,COUNT(transaction_id) number_trans
-,COUNT(customer_id) number_cus
+,COUNT(DISTINCT(customer_id)) number_cus
 FROM joined_table
 GROUP BY [month]
 ORDER BY [month]
